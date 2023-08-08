@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Details</title>
+    <style>
+     
+        
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Details of {{DSO.sc_name}}</h1>
+        <div class="line">
+        <table cellpadding="10">
+            <tr>
+                <th>School Name</th>
+                <th>School Location</th>
+                <th>School Principal</th>
+            </tr>
+            <tr>
+                <td>{{DSO.sc_name}}</td>
+                <td>{{DSO.sc_loc}}</td>
+                <td>{{DSO.sc_principal}}</td>
+            </tr>
+        </table>
+        <br><br>
+        <h1>Student Details</h1>
+        <table cellpadding="10">
+            <tr>
+                <th>Student Name</th>
+                <th>Student Age</th>
+            </tr>
+            {% for stu in DSO.myStudent.all %}
+                <tr>
+                    <td>{{stu.st_name}}</td>
+                    <td>{{stu.st_age}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+    </center>
+</body>
+</html>
